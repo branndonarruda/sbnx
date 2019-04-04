@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Welcome, Button } from '@storybook/angular/demo';
-import { ButtonComponent } from 'apps/sbnx/src/app/button/button.component';
+import { ButtonComponent } from '@sbnx/shared/components/src/lib/button/button.component';
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
   component: Welcome,
@@ -17,7 +17,7 @@ storiesOf('Button', module)
     }),
   )
   .add('Button', () => ({
-    template: `<app-button></app-button>`,
+    template: `<sbnx-button></sbnx-button>`,
     props: {
       text: 'Hello Button',
     },

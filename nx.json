@@ -16,6 +16,9 @@
     },
     "client": {
       "tags": []
+    },
+    "shared-components": {
+      "tags": ["shared-components"]
     }
   }
 }

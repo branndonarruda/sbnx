@@ -14,8 +14,8 @@ module.exports = {
       ]
    },
    plugins: [
-      new webpack.NormalModuleReplacementPlugin(/@gs/, function (resource) {
-         resource.request = resource.request.replace(/@gs/, libPath);
+      new webpack.NormalModuleReplacementPlugin(/@sbnx/, function (resource) {
+         resource.request = resource.request.replace(/@sbnx/, libPath);
       })
    ]
 }
