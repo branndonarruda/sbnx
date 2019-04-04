@@ -11,17 +11,11 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "@sbnx/*": [
-        "libs/*"
-      ]
+      "@sbnx/*": ["libs/*"],
+      "@sbnx/client": ["libs/client/src/index.ts"]
     }
   }
 }
