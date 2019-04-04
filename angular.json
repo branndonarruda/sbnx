@@ -1,0 +1,139 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "sbnx": {
+      "root": "apps\\sbnx",
+      "sourceRoot": "apps/sbnx/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist\\apps\\sbnx",
+            "index": "apps/sbnx/src/index.html",
+            "main": "apps/sbnx/src/main.ts",
+            "polyfills": "apps/sbnx/src/polyfills.ts",
+            "tsConfig": "apps\\sbnx\\tsconfig.app.json",
+            "assets": [
+              "apps/sbnx/src/favicon.ico",
+              "apps/sbnx/src/assets"
+            ],
+            "styles": [
+              "apps/sbnx/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/sbnx/src/environments/environment.ts",
+                  "with": "apps/sbnx/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sbnx:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "sbnx:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sbnx:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/sbnx/src/test.ts",
+            "polyfills": "apps/sbnx/src/polyfills.ts",
+            "tsConfig": "apps\\sbnx\\tsconfig.spec.json",
+            "karmaConfig": "apps\\sbnx\\karma.conf.js",
+            "styles": [
+              "apps/sbnx/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/sbnx/src/favicon.ico",
+              "apps/sbnx/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps\\sbnx\\tsconfig.app.json",
+              "apps\\sbnx\\tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "sbnx-e2e": {
+      "root": "apps\\sbnx-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps\\sbnx-e2e\\protractor.conf.js",
+            "devServerTarget": "sbnx:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sbnx:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps\\sbnx-e2e\\tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "sbnx",
+  "cli": {
+    "defaultCollection": "@nrwl/schematics"
+  }
+}
