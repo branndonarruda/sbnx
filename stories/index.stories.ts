@@ -4,6 +4,7 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Welcome, Button } from '@storybook/angular/demo';
 import { ButtonComponent } from '@sbnx/shared/components/src/lib/button/button.component';
+import { ListComponent } from '@sbnx/shared/components/src/lib/list/list.component';
 
 storiesOf('Welcome', module).add('to Storybook', () => ({
   component: Welcome,
@@ -13,11 +14,11 @@ storiesOf('Welcome', module).add('to Storybook', () => ({
 storiesOf('Button', module)
   .addDecorator(
     moduleMetadata({
-      declarations: [ButtonComponent],
+      declarations: [ButtonComponent, ListComponent],
     }),
   )
   .add('Button', () => ({
-    template: `<sbnx-button></sbnx-button>`,
+    template: `<sbnx-list></sbnx-list>`,
     props: {
       text: 'Hello Button',
     },

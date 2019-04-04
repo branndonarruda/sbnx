@@ -178,6 +178,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "shared-services": {
+      "root": "libs/shared/services",
+      "sourceRoot": "libs/shared/services/src",
+      "projectType": "library",
+      "prefix": "sbnx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/services/tsconfig.lib.json",
+              "libs/shared/services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/shared/services/src/test.ts",
+            "tsConfig": "libs/shared/services/tsconfig.spec.json",
+            "karmaConfig": "libs/shared/services/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "defaultProject": "sbnx",

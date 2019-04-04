@@ -16,7 +16,8 @@
     "paths": {
       "@sbnx/*": ["libs/*"],
       "@sbnx/client": ["libs/client/src/index.ts"],
-      "@sbnx/shared/components": ["libs/shared/components/src/index.ts"]
+      "@sbnx/shared/components": ["libs/shared/components/src/index.ts"],
+      "@sbnx/shared/services": ["libs/shared/services/src/index.ts"]
     }
   }
 }
